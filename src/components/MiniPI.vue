@@ -112,6 +112,8 @@ export default {
   height: 100vh;
 
   background: linear-gradient(to bottom, #dadcee, #fff);
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .mini-pi_backup {

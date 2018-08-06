@@ -45,8 +45,8 @@ export default {
 }
 
 .canvas {
-  width: 50vmin;
-  height: 50vmin;
+  width: 50vh;
+  height: 50vh;
   margin: auto;
 
   background: #ff7875;
