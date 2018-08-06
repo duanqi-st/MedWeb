@@ -21,12 +21,23 @@ import male from '@/assets/male.png';
 export default {
   name: 'PatientCard',
   props: {
+    // info包含以下属性
+    // gender Number 1/0
+    // name String
+    // bd String
+    // id String
+    // date String
     info: {
       type: Object,
       required: true
     }
   },
+  // 计算属性
   computed: {
+    /**
+     * 动态计算用户头像 男／女
+     * @return {String} 头像地址
+     */
     avatar() {
       return this.info.gender ? male : female;
     }
