@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="container container_backup">
+  <div @click="()=>handleClickPI(info.id)">
+    <div class="container container_backup" :class="{'container_active':shouldShowExamples}">
       <img :src="avatar" alt="avatar" class="avatar avatar_backup">
       <div class="info info_backup">
         <span class="info--name">{{info.name}}</span>
@@ -9,6 +9,13 @@
       </div>
       <div class="date date_backup">
         <span>{{info.date}}</span>
+      </div>
+    </div>
+    <div v-if="shouldShowExamples">
+      <div v-for="example in info.examples" :key="example.id" @click="()=>handleClickExample(example.id)" class="example example_backup">
+        <div>{{example.name}}</div>
+        <div>{{example.date}}</div>
+        <div>{{example.id}}</div>
       </div>
     </div>
   </div>
@@ -27,9 +34,15 @@ export default {
     // bd String
     // id String
     // date String
+    // examples Array
     info: {
       type: Object,
       required: true
+    },
+    current: {
+      type: String,
+      required: false,
+      default: null
     }
   },
   // 计算属性
@@ -40,6 +53,17 @@ export default {
      */
     avatar() {
       return this.info.gender ? male : female;
+    },
+    shouldShowExamples() {
+      return this.info.id === this.current;
+    }
+  },
+  methods: {
+    handleClickPI(id) {
+      this.$emit('update:current', id);
+    },
+    handleClickExample(id) {
+      this.$emit('select', id);
     }
   }
 };
@@ -53,8 +77,14 @@ export default {
 
   width: 100%;
   height: 64px;
-
+  color: #1b274d;
   border-top: 1px solid #8d99b2;
+  &_active {
+    background: rgba(51, 103, 237, 0.4);
+    box-shadow: 0 4px 12px 0;
+    color: #fff;
+    z-index: 10;
+  }
   &_backup {
     min-height: 64px;
   }
@@ -74,17 +104,11 @@ export default {
     font-size: 12px;
     line-height: 1.7;
   }
-  &--name,
-  &--bd {
-    color: #1b274d;
-  }
+
   &--name {
     margin-right: 11px;
 
     font-weight: bold;
-  }
-  &--id {
-    color: #3b4a81;
   }
 }
 
@@ -107,6 +131,26 @@ export default {
   }
   span {
     margin: auto;
+  }
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  box-sizing: border-box;
+  padding-left: 56px;
+  justify-content: space-around;
+  &_backup {
+    min-height: 30px;
+    font-size: 12px;
+  }
+  &:nth-child(2n + 1) {
+    color: #3b4a81;
+  }
+  &:nth-child(2n) {
+    color: #fff;
+    background: #6089d8;
   }
 }
 </style>

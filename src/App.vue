@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <keep-alive>
-      <MiniPI :show="miniPIShow" />
+      <MiniPI :show="miniPIShow" :currentPatient.sync="currentPatient" />
     </keep-alive>
-    <Console @onToggle="handleToggle" />
+    <Console @onToggle="handleToggle" :current="currentPatient" />
     <Main/>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       miniPIShow: true,
-      consoleShow: false
+      currentPatient: {}
     };
   },
   methods: {

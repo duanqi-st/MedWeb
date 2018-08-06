@@ -8,7 +8,7 @@
       <!-- PatientCard 为自定义组件，需要引入并添加到 components 对象中 -->
       <!-- 遍历 this.list 列表，把列表中的单项命名成 patitent；v-for必须提供 key -->
       <!-- 向 PatientCard 中传入 info，即每个病人的数据 -->
-      <PatientCard v-for="patitent in list" :key="patitent.id" :info="patitent" />
+      <PatientCard v-for="patitent in list" :key="patitent.id" :info="patitent" :current.sync="currentId" @select="id=>handleSelect(id, currentId)" />
     </div>
   </transition>
 </template>
@@ -45,6 +45,8 @@ export default {
   },
   data() {
     return {
+      // 当前PI
+      currentId: null,
       // list 为PI列表
       list: [
         {
@@ -52,14 +54,33 @@ export default {
           name: '王大力',
           gender: 1,
           date: '2018.01.01',
-          bd: 'BD 2018.01.01'
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
         },
         {
           id: '1343543654764',
           name: '刘长春',
           gender: 0,
           date: '2018.05.04',
-          bd: 'BD 2018.04.03'
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
         }
       ]
     };
@@ -69,6 +90,16 @@ export default {
     handleScorll() {
       // ! this is a example method
       this.$socket.emit('onScorll', { currentPage: 2, pageSize: 10 });
+    },
+    handleSelect(example, patient) {
+      const currentPI = this.list.find(({ id }) => id === patient) || {};
+      const currentExamples = currentPI.examples.filter(
+        ({ id }) => id === example
+      );
+      this.$emit('update:currentPatient', {
+        ...currentPI,
+        examples: currentExamples
+      });
     }
   }
 };
@@ -93,8 +124,8 @@ export default {
 .slide-fade-leave-active {
   transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
+.slide-fade-enter,
+.slide-fade-leave-to {
   transform: translateX(-15vw);
 
   opacity: 0;
