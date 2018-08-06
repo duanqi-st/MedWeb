@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <keep-alive>
-      <MiniPI/>
+      <MiniPI :show="miniPIShow" />
     </keep-alive>
-    <Console/>
+    <Console @onToggle="handleToggle" />
     <Main/>
   </div>
 </template>
@@ -19,6 +19,17 @@ export default {
     MiniPI,
     Console,
     Main
+  },
+  data() {
+    return {
+      miniPIShow: true,
+      consoleShow: false
+    };
+  },
+  methods: {
+    handleToggle() {
+      this.miniPIShow = !this.miniPIShow;
+    }
   }
 };
 </script>

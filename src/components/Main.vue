@@ -1,5 +1,5 @@
 <template>
-  <div class="main main_ignore">
+  <div class="main main_backup">
     <div class="canvas-wrapper">
       <div class="canvas"></div>
     </div>
@@ -30,7 +30,7 @@ export default {
   background: red;
 }
 
-.main_ignore {
+.main_backup {
   min-width: 100vh;
 }
 
