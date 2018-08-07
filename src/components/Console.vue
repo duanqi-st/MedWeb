@@ -15,6 +15,14 @@
         <span>{{current.bd}}</span>
         <div>{{current.id}}</div>
       </div>
+      <div class="footer">
+        <div class="btn btn_backup next">
+          <span>next</span>
+        </div>
+        <div class="btn btn_backup report" @click="toggleDD">
+          <span>report</span>
+        </div>
+      </div>
     </div>
   </transition>
 </template>
@@ -44,7 +52,10 @@ export default {
   },
   methods: {
     toggleMiniPI() {
-      this.$emit('onToggle');
+      this.$emit('onTogglePI');
+    },
+    toggleDD() {
+      this.$emit('onToggleDD');
     }
   }
 };
@@ -54,7 +65,7 @@ export default {
 .console {
   width: 15.432vw;
   height: 100vh;
-
+  position: relative;
   background: #253561;
   &_backup {
     min-width: 252px;
@@ -96,6 +107,45 @@ export default {
 
 .patient {
   color: #fff;
+}
+
+.footer {
+  position: absolute;
+  display: flex;
+  bottom: 26px;
+  width: 100%;
+  color: #fff;
+  justify-content: space-around;
+  .btn {
+    width: 88px;
+    height: 24px;
+    border-radius: 100px;
+    display: flex;
+    box-sizing: border-box;
+    span {
+      margin: auto;
+    }
+    &_backup {
+      font-size: 12px;
+      min-width: 88px;
+      min-height: 24px;
+    }
+  }
+  .next {
+    font-weight: bold;
+    background-image: linear-gradient(
+      -34deg,
+      #5e34a9 0%,
+      #1a209e 44%,
+      #427bf7 100%
+    );
+    box-shadow: 0 2px 12px 0 rgba(0, 29, 255, 0.35),
+      inset 0 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  .report {
+    background: rgba(27, 54, 116, 0.5);
+    border: 1px solid #ffffff;
+  }
 }
 
 .slide-fade-enter-active {
