@@ -1,23 +1,37 @@
 <template>
   <transition name="slide-fade">
     <div v-if="show" class="container">
-      <div>something</div>
-      <Case/>
+      <Report @submit="submit" :current="current" />
+      <Case @select="handleSelect" />
     </div>
   </transition>
 </template>
 
 <script>
+import Report from '@/components/Report';
 import Case from '@/components/Case';
 
 export default {
   name: 'DiseaseDiagnosis',
-  components: { Case },
+  components: { Case, Report },
   props: {
     show: {
       type: Boolean,
       required: false,
-      default: true
+      default: false
+    }
+  },
+  data() {
+    return {
+      current: {}
+    };
+  },
+  methods: {
+    submit() {
+      this.$emit('update:show', false);
+    },
+    handleSelect(item) {
+      this.current = item;
     }
   }
 };

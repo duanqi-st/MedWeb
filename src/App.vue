@@ -5,7 +5,7 @@
     </keep-alive>
     <Console @onTogglePI="miniPIShow = !miniPIShow" @onToggleDD="ddShow = !ddShow" :current="currentPatient" />
     <Main/>
-    <DiseaseDiagnosis :show="ddShow" />
+    <DiseaseDiagnosis :show.sync="ddShow" />
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       miniPIShow: true,
-      ddShow: false,
+      ddShow: true,
       currentPatient: {}
     };
   }
