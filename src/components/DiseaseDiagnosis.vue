@@ -1,7 +1,7 @@
 <template>
   <transition name="slide-fade">
     <div v-if="show" class="container">
-      <Report @submit="submit" :current="current" />
+      <Report @submit="submit" :current="current" :currentPatient="currentPatient" />
       <Case @select="handleSelect" />
     </div>
   </transition>
@@ -19,6 +19,10 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    currentPatient: {
+      type: Object,
+      required: true
     }
   },
   data() {

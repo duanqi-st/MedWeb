@@ -7,14 +7,14 @@
     <table class="info">
       <tbody>
         <tr>
-          <td>姓名：刘继芬</td>
-          <td>性别：女</td>
+          <td>姓名：{{currentPatient.name}}</td>
+          <td>性别：{{currentPatient.gender ? '男':'女'}}</td>
           <td>年龄：37</td>
         </tr>
         <tr>
           <td>医院编号：13432</td>
           <td>电话：12345678912</td>
-          <td>病号：12458415555</td>
+          <td>病号：{{currentPatient.id}}</td>
         </tr>
       </tbody>
     </table>
@@ -44,6 +44,10 @@ export default {
       type: Object,
       required: false,
       default: () => ({})
+    },
+    currentPatient: {
+      type: Object,
+      required: true
     }
   },
   methods: {
