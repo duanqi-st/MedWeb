@@ -2,6 +2,7 @@
 
 ## 结构
 
+```
 src
 ├── App.vue
 ├── assets // 静态资源
@@ -15,6 +16,7 @@ src
 │ └── common
 │ └── ScaleFrame.vue // TODO：板块显示隐藏动画抽象到此处
 └── main.js // socket 地址在此处配置
+```
 
 ## Project setup
 
