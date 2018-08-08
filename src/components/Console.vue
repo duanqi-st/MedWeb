@@ -15,6 +15,18 @@
         <span>{{current.bd}}</span>
         <div>{{current.id}}</div>
       </div>
+      <Plate title="Layout">
+        <div class="icon-wrapper">
+          <XIcon v-for="icon in layoutIcons" :key="icon.id" :img="icon.img" :selected.sync="icon.selected" :iconId="icon.id" iconList="layoutIcons" @select="SelectIcon"/>
+        </div>
+      </Plate>
+      <Plate title="Public">
+        <div class="icon-wrapper">
+          <XIcon v-for="icon in publicIcons" :key="icon.id" :img="icon.img" :selected.sync="icon.selected" :iconId="icon.id" iconList="publicIcons" @select="SelectIcon"/>
+        </div>
+      </Plate>
+      <Plate title="Other"></Plate>
+      <Plate title="Illness"></Plate>
       <div class="footer">
         <div class="btn btn_backup next">
           <span>next</span>
@@ -29,9 +41,25 @@
 
 <script>
 import isEmpty from 'lodash/isEmpty';
+import uniqueId from 'lodash/uniqueId';
+import Plate from '@/components/common/Plate';
+import XIcon from '@/components/common/XIcon';
+
+import layout1 from '@/assets/Console/layout1.png';
+import layout4 from '@/assets/Console/layout4.png';
+
+import public1 from '@/assets/Console/public1.png';
+import public2 from '@/assets/Console/public2.png';
+import public3 from '@/assets/Console/public3.png';
+import public4 from '@/assets/Console/public4.png';
+import public5 from '@/assets/Console/public5.png';
+import public6 from '@/assets/Console/public6.png';
+import public7 from '@/assets/Console/public7.png';
+import public8 from '@/assets/Console/public8.png';
 
 export default {
   name: 'Console',
+  components: { Plate, XIcon },
   props: {
     current: {
       type: Object,
@@ -40,6 +68,25 @@ export default {
       // 此处默认对象为空对象
       default: () => ({})
     }
+  },
+  data() {
+    return {
+      layoutIcons: [layout1, layout4].map(icon => ({
+        id: uniqueId('layout'),
+        img: icon,
+        selected: false
+      })),
+      publicIcons: [
+        public1,
+        public2,
+        public3,
+        public4,
+        public5,
+        public6,
+        public7,
+        public8
+      ].map(icon => ({ id: uniqueId('public'), img: icon, selected: false }))
+    };
   },
   computed: {
     /**
@@ -56,6 +103,14 @@ export default {
     },
     toggleDD() {
       this.$emit('onToggleDD');
+    },
+    SelectIcon(id, list) {
+      this[list] = this[list].map(icon=>{
+        if(id===icon.id){
+          return {...icon, selected:true}
+        }
+        return {...icon, selected:false}
+      })
     }
   }
 };
@@ -107,6 +162,12 @@ export default {
 
 .patient {
   color: #fff;
+}
+
+.icon-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 20px;
 }
 
 .footer {

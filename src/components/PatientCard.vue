@@ -91,10 +91,10 @@ export default {
 }
 
 .avatar {
-  width: 25px;
+  width: 23px;
   height: 25px;
   &_backup {
-    min-width: 25px;
+    min-width: 23px;
     min-height: 25px;
   }
 }
