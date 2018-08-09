@@ -11,7 +11,7 @@
 
 <script>
 import MiniPI from '@/components/MiniPI';
-import Console from '@/components/Console';
+import Console from '@/components/console/Console';
 import Main from '@/components/Main';
 import DiseaseDiagnosis from '@/components/DiseaseDiagnosis';
 
@@ -27,7 +27,20 @@ export default {
     return {
       miniPIShow: true,
       ddShow: false,
-      currentPatient: {}
+      currentPatient: {
+        id: '1343543654764',
+        name: '刘长春',
+        gender: 0,
+        date: '2018.05.04',
+        bd: 'BD 2018.04.03',
+        examples: [
+          {
+            id: 55,
+            name: 'example 1',
+            date: '2018.02.15'
+          }
+        ]
+      }
     };
   }
 };

@@ -1,0 +1,37 @@
+<template>
+  <svg width="22px" height="30px" viewBox="0 0 22 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+      <polygon id="path-1" points="10 7 11.1675877 7 11.1675877 27.2980625 24.5200005 27.2980625 24.5200005 28.3758357 10 28.3758357"></polygon>
+      <filter x="-48.2%" y="-23.4%" width="196.4%" height="165.5%" filterUnits="objectBoundingBox" id="filter-2">
+        <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+        <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+        <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+        <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+        <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.596608922 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+      </filter>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Artboard" transform="translate(-372.000000, -237.000000)">
+        <g id="Group-6" transform="translate(366.000000, 232.000000)">
+          <g id="Group-Copy-4" fill="#000000" opacity="0">
+            <g id="Rectangle-6-Copy">
+              <rect x="0" y="0" width="35" height="35"></rect>
+            </g>
+          </g>
+          <g id="L">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <path stroke="#FFFFFF" stroke-width="1" d="M10.5,7.5 L10.5,27.8758357 L24.0200005,27.8758357 L24.0200005,27.7980625 L10.6675877,27.7980625 L10.6675877,7.5 L10.5,7.5 Z"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+</template>
+
+<script>
+export default {};
+</script>

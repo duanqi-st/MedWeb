@@ -1,0 +1,39 @@
+<template>
+  <svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 24</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+      <filter x="-33.3%" y="-23.8%" width="166.7%" height="166.7%" filterUnits="objectBoundingBox" id="filter-1">
+        <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+        <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+        <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+        <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+        <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.596608922 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+        <feMerge>
+          <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Artboard" transform="translate(-414.000000, -281.000000)">
+        <g id="Group-24" transform="translate(411.000000, 276.000000)">
+          <g id="Group-Copy-10" fill="#000000" opacity="0">
+            <g id="Rectangle-6-Copy">
+              <rect x="0" y="0" width="35" height="35"></rect>
+            </g>
+          </g>
+          <g id="撤销-3" filter="url(#filter-1)" transform="translate(7.000000, 7.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M1.64137931,5.06896552 L12.5517241,5.06896552 C16.7034483,5.06896552 20.0344828,8.4 20.0344828,12.5517241 C20.0344828,16.7034483 16.7034483,20.0344828 12.5517241,20.0344828 L7.62758621,20.0344828 C7.33793103,20.0344828 7.14482759,20.2275862 7.14482759,20.5172414 C7.14482759,20.8068966 7.33793103,21 7.62758621,21 L12.5517241,21 C17.2344828,21 21,17.2344828 21,12.5517241 C21,7.86896552 17.2344828,4.10344828 12.5517241,4.10344828 L1.64137931,4.10344828 L4.92413793,0.820689655 C5.11724138,0.627586207 5.11724138,0.337931034 4.92413793,0.144827586 C4.73103448,-0.0482758621 4.44137931,-0.0482758621 4.24827586,0.144827586 L0.144827586,4.24827586 C-0.0482758621,4.44137931 -0.0482758621,4.73103448 0.144827586,4.92413793 L4.24827586,9.02758621 C4.44137931,9.22068966 4.73103448,9.22068966 4.92413793,9.02758621 C5.11724138,8.83448276 5.11724138,8.54482759 4.92413793,8.35172414 L1.64137931,5.06896552 Z" id="Shape"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+</template>
+
+<script>
+export default {};
+</script>

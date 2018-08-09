@@ -1,0 +1,39 @@
+<template>
+  <svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+      <filter x="-31.8%" y="-27.3%" width="168.2%" height="172.7%" filterUnits="objectBoundingBox" id="filter-1">
+        <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+        <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+        <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+        <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+        <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.596608922 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+        <feMerge>
+          <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Artboard" transform="translate(-96.000000, -345.000000)">
+        <g id="Group-9" transform="translate(93.000000, 340.000000)">
+          <g id="Rectangle-6-Copy" fill="#000000" opacity="0">
+            <rect x="0" y="0" width="35" height="35"></rect>
+          </g>
+          <g id="Group-7" filter="url(#filter-1)" transform="translate(7.000000, 7.000000)" stroke="#FFFFFF">
+            <rect id="Rectangle-7-Copy" x="0.5" y="0.5" width="21" height="21" rx="2"></rect>
+            <path d="M21.5434783,11.5 L1.37368858,11.5" id="Line-3" stroke-linecap="square"></path>
+            <path d="M11.5,21.5416667 L11.5,0.458333333" id="Line-3" stroke-linecap="square"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+</template>
+
+<script>
+export default {};
+</script>
