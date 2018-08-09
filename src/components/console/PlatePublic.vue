@@ -1,21 +1,45 @@
 <template>
   <Plate title="Public">
-    <Enlarge></Enlarge>
-    <Move></Move>
-    <Invert></Invert>
-    <Left></Left>
-    <Right></Right>
-    <TextX></TextX>
-    <RectX></RectX>
-    <Angle></Angle>
-    <Crop></Crop>
-    <Undo></Undo>
+    <div class="icon-wrapper">
+      <XIcon name="enlarge" :current.sync="current">
+        <Enlarge />
+      </XIcon>
+      <XIcon name="move" :current.sync="current">
+        <Move />
+      </XIcon>
+      <XIcon name="invert" :current.sync="current">
+        <Invert />
+      </XIcon>
+      <XIcon name="left" :current.sync="current">
+        <Left />
+      </XIcon>
+      <XIcon name="right" :current.sync="current">
+        <Right />
+      </XIcon>
+      <XIcon name="text" :current.sync="current">
+        <TextX />
+      </XIcon>
+      <XIcon name="rect" :current.sync="current">
+        <RectX />
+      </XIcon>
+      <XIcon name="angle" :current.sync="current">
+        <Angle />
+      </XIcon>
+      <XIcon name="crop" :current.sync="current">
+        <Crop />
+      </XIcon>
+      <XIcon name="undo" :current.sync="current">
+        <Undo />
+      </XIcon>
+    </div>
   </Plate>
 </template>
 
 <script>
 // component
 import Plate from '@/components/common/Plate';
+import XIcon from '@/components/common/XIcon';
+// icon
 import Enlarge from '@/components/icon/Enlarge';
 import Move from '@/components/icon/Move';
 import Invert from '@/components/icon/Invert';
@@ -31,6 +55,7 @@ export default {
   name: 'PlatePublic',
   components: {
     Plate,
+    XIcon,
     Enlarge,
     Move,
     Invert,
@@ -43,7 +68,20 @@ export default {
     Undo
   },
   data() {
-    return {};
+    return {
+      current: 'enlarge'
+    };
+  },
+  methods: {
+    handleClick(name) {
+      this.current = name;
+    }
   }
 };
 </script>
+
+<style lang="less" scoped>
+.icon-wrapper {
+  padding: 6px 10px;
+}
+</style>

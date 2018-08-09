@@ -20,12 +20,8 @@
       <Plate title="Other"></Plate>
       <Plate title="Illness"></Plate>
       <div class="footer">
-        <div class="btn btn_backup next">
-          <span>next</span>
-        </div>
-        <div class="btn btn_backup report" @click="toggleDD">
-          <span>report</span>
-        </div>
+        <XButton md>next</XButton>
+        <XButton md ghost @click="toggleDD">report</XButton>
       </div>
     </div>
   </transition>
@@ -38,10 +34,11 @@ import PlateLayout from './PlateLayout';
 import PlatePublic from './PlatePublic';
 import Plate from '@/components/common/Plate';
 import XIcon from '@/components/common/XIcon';
+import XButton from '@/components/common/XButton';
 
 export default {
   name: 'Console',
-  components: { Plate, XIcon, PlateLayout, PlatePublic },
+  components: { Plate, XIcon, PlateLayout, PlatePublic, XButton },
   props: {
     current: {
       type: Object,

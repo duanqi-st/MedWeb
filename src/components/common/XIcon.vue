@@ -1,5 +1,6 @@
 <template>
-  <div :class="{'icon_active':selected}" class="icon icon_backup" :style="{'background-image':`url(${img})`}" @click="()=>handleSelect(selected,iconId, iconList)">
+  <div class="icon icon_backup" :class="{'icon_active':isActive}" @click="()=>handleSelect(name)">
+    <slot></slot>
   </div>
 </template>
 
@@ -7,28 +8,25 @@
 export default {
   name: 'XIcon',
   props: {
-    img: {
+    name: {
       type: String,
       required: true
     },
-    selected: {
-      type: Boolean,
+    current: {
+      type: String,
       required: false,
-      default: false
-    },
-    iconId: {
-      type: String,
-      required: true
-    },
-    iconList: {
-      type: String,
-      required: true
+      default: ''
+    }
+  },
+  computed: {
+    isActive() {
+      return this.name === this.current;
     }
   },
   methods: {
-    handleSelect(selected,id, list) {
-      if(!selected){
-        this.$emit('select', id, list);
+    handleSelect(name) {
+      if (!this.isActive) {
+        this.$emit('update:current', name);
       }
     }
   }
@@ -37,22 +35,27 @@ export default {
 
 <style lang="less" scoped>
 .icon {
-  display: inline-block;
+  position: relative;
   width: 35px;
   height: 35px;
-  border-radius: 10%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 5px;
   &_backup {
     min-width: 35px;
     min-height: 35px;
   }
+  &_active {
+    background: rgba(7, 17, 27, 0.5);
+    border-radius: 10%;
+  }
 }
 
-.icon_active {
-  .icon;
-  background-color: rgba(7, 17, 27, 0.5);
+.icon > * {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
