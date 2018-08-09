@@ -1,5 +1,5 @@
 <template>
-  <input type="text" :placeholder="placeholder" class="x-input x-input_backup">
+  <input type="text" :placeholder="placeholder" class="x-input-search x-input-search_backup">
 </template>
 
 <script>
@@ -14,17 +14,18 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.x-input {
+.x-input-search {
   position: relative;
-  display: block;
+  display: inline-block;
   // width: 100%;
-  border: 1px solid #dcdfe6;
+  border: none;
   border-radius: 100px;
   transition: all 0.3s;
   color: #333;
-  box-sizing: border-box;
+  background: url('./../../assets/search.png') 95% center no-repeat, #fff;
+  background-size: 1em 1em;
   &_backup {
-    font-size: 14px;
+    font-size: 12px;
     padding: 0.5em 1em;
   }
   &::-moz-placeholder {
@@ -38,11 +39,12 @@ export default {
     color: #576e98;
   }
   &:hover {
-    border: 1px solid #91959d;
+    box-shadow: 0 10px 10px 0 rgba(18, 18, 23, 0.2);
   }
   &:focus {
     outline: none;
-    border: 1px solid #427bf7;
+    box-shadow: 0 10px 10px 0 rgba(18, 18, 23, 0.2);
+    background-image: none;
   }
 }
 </style>

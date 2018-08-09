@@ -5,7 +5,8 @@
     <!-- v-show 适用于经常切换的内容 -->
     <!-- v-if 适用于不经常切换的内容 惰性加载 -->
     <div v-show="show" class="mini-pi mini-pi_backup">
-      <XInput placeholder="test st"></XInput>
+      <!-- <XInput placeholder="test st"></XInput> -->
+      <XInputSearch placeholder="test st"></XInputSearch>
       <!-- PatientCard 为自定义组件，需要引入并添加到 components 对象中 -->
       <!-- 遍历 this.list 列表，把列表中的单项命名成 patitent；v-for必须提供 key -->
       <!-- 向 PatientCard 中传入 info，即每个病人的数据 -->
@@ -17,10 +18,11 @@
 <script>
 import PatientCard from '@/components/PatientCard';
 import XInput from '@/components/common/XInput';
+import XInputSearch from '@/components/common/XInputSearch';
 
 export default {
   name: 'MiniPI',
-  components: { PatientCard, XInput },
+  components: { PatientCard, XInput, XInputSearch },
   // sockets 对象中监听 socket事件
   sockets: {
     connect() {
