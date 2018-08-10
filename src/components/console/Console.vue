@@ -80,13 +80,20 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@media screen and (orientation: portrait) {
+  .console {
+    order: 3;
+  }
+}
 .console {
-  width: 15.432vw;
-  height: 100vh;
+  // width: 15.432vw;
+  // height: 100vh;
+  flex: 25;
   position: relative;
   background: #253561;
+
   &_backup {
-    min-width: 252px;
+    // min-width: 252px;
   }
 }
 

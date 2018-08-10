@@ -31,6 +31,8 @@
       <XIcon name="undo" :current.sync="current">
         <Undo />
       </XIcon>
+      <rightS></rightS>
+      <!-- <icon name="Group 15" scale="200"></icon> -->
     </div>
   </Plate>
 </template>
@@ -51,6 +53,8 @@ import Angle from '@/components/icon/Angle';
 import Crop from '@/components/icon/Crop';
 import Undo from '@/components/icon/Undo';
 
+import rightS from '@/svg/right.svg';
+
 export default {
   name: 'PlatePublic',
   components: {
@@ -65,7 +69,8 @@ export default {
     RectX,
     Angle,
     Crop,
-    Undo
+    Undo,
+    rightS
   },
   data() {
     return {

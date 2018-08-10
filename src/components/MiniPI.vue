@@ -7,6 +7,9 @@
     <div v-show="show" class="mini-pi mini-pi_backup">
       <!-- <XInput placeholder="test st"></XInput> -->
       <XInputSearch placeholder="test st"></XInputSearch>
+      <XSelect>
+        <span slot="select">sdsdsd</span>
+      </XSelect>
       <!-- PatientCard 为自定义组件，需要引入并添加到 components 对象中 -->
       <!-- 遍历 this.list 列表，把列表中的单项命名成 patitent；v-for必须提供 key -->
       <!-- 向 PatientCard 中传入 info，即每个病人的数据 -->
@@ -19,10 +22,11 @@
 import PatientCard from '@/components/PatientCard';
 import XInput from '@/components/common/XInput';
 import XInputSearch from '@/components/common/XInputSearch';
+import XSelect from '@/components/common/XSelect';
 
 export default {
   name: 'MiniPI',
-  components: { PatientCard, XInput, XInputSearch },
+  components: { PatientCard, XInput, XInputSearch, XSelect },
   // sockets 对象中监听 socket事件
   sockets: {
     connect() {
@@ -110,18 +114,23 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (orientation: portrait) {
+  .mini-pi {
+    order: 1;
+  }
+}
 .mini-pi {
   box-sizing: border-box;
-  width: 17.901vw;
-  height: 100vh;
-
+  /* width: 17.901vw;
+  height: 100vh; */
+  flex: 29;
   background: linear-gradient(to bottom, #dadcee, #fff);
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 .mini-pi_backup {
-  min-width: 289px;
+  /* min-width: 289px; */
 }
 
 .slide-fade-enter-active {

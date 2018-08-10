@@ -22,16 +22,21 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (orientation: portrait) {
+  .main {
+    order: 2;
+  }
+}
 .main {
   display: flex;
-  flex: 1;
+  flex: 108;
   flex-wrap: wrap;
 
   background: red;
 }
 
 .main_backup {
-  min-width: 100vh;
+  min-width: 100vmin;
 }
 
 .canvas-wrapper {
@@ -45,8 +50,8 @@ export default {
 }
 
 .canvas {
-  width: 50vh;
-  height: 50vh;
+  width: 50vmin;
+  height: 50vmin;
   margin: auto;
 
   background: #ff7875;

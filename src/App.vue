@@ -55,4 +55,10 @@ export default {
   box-sizing: border-box;
   overflow: hidden;
 }
+
+@media screen and (orientation: portrait) {
+  #app {
+    flex-direction: column;
+  }
+}
 </style>
