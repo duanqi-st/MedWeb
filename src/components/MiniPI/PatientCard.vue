@@ -80,8 +80,8 @@ export default {
   color: #1b274d;
   border-top: 1px solid #8d99b2;
   &_active {
-    background: rgba(51, 103, 237, 0.4);
-    box-shadow: 0 4px 12px 0;
+    background: #5a92ff;
+    box-shadow: 0 4px 12px 0 rgba(51, 103, 237, 0.4);
     color: #fff;
     z-index: 10;
     border-bottom-left-radius: 30px;

@@ -1,31 +1,40 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <MiniPI :show="miniPIShow" :currentPatient.sync="currentPatient" />
-    </keep-alive>
-    <Console @onTogglePI="miniPIShow = !miniPIShow" @onToggleDD="ddShow = !ddShow" :current="currentPatient" />
-    <Main/>
-    <DiseaseDiagnosis :show.sync="ddShow" :currentPatient="currentPatient" />
+    <img src="./assets/logo.png">
+    <div>
+      <p>
+        If Element is successfully added to this project, you'll see an
+        <code v-text="'<el-button>'"></code>
+        below
+      </p>
+      <el-button>el-button</el-button>
+    </div>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import MiniPI from '@/components/MiniPI/MiniPI';
-import Console from '@/components/Console/Console';
-import Main from '@/components/Main';
-import DiseaseDiagnosis from '@/components/DiseaseDiagnosis';
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    MiniPI,
-    Console,
-    Main,
-    DiseaseDiagnosis
-  },
-  data() {
-    return {
-      miniPIShow: true,
+    HelloWorld
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+   miniPIShow: true,
       ddShow: false,
       currentPatient: {
         id: '1343543654764',

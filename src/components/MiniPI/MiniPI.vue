@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import uniqueId from 'lodash/uniqueId';
+
 import PatientCard from './PatientCard';
 import UserBar from './UserBar';
 import FilterPlate from './FilterPlate';
@@ -57,7 +59,7 @@ export default {
       // list 为PI列表
       list: [
         {
-          id: '1343543654765',
+          id: uniqueId(),
           name: '王大力',
           gender: 1,
           date: '2018.01.01',
@@ -76,7 +78,304 @@ export default {
           ]
         },
         {
-          id: '1343543654764',
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '刘长春',
+          gender: 0,
+          date: '2018.05.04',
+          bd: 'BD 2018.04.03',
+          examples: [
+            {
+              id: 55,
+              name: 'example 1',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
+          name: '王大力',
+          gender: 1,
+          date: '2018.01.01',
+          bd: 'BD 2018.01.01',
+          examples: [
+            {
+              id: 78,
+              name: 'example 1',
+              date: '2018.02.12'
+            },
+            {
+              id: 75,
+              name: 'example 2',
+              date: '2018.02.15'
+            }
+          ]
+        },
+        {
+          id: uniqueId(),
           name: '刘长春',
           gender: 0,
           date: '2018.05.04',
