@@ -1,37 +1,34 @@
 <template>
   <Plate title="Public">
     <div class="icon-wrapper">
-      <XIcon name="enlarge" :current.sync="current">
-        <Enlarge />
-      </XIcon>
-      <XIcon name="move" :current.sync="current">
-        <Move />
-      </XIcon>
-      <XIcon name="invert" :current.sync="current">
-        <Invert />
-      </XIcon>
-      <XIcon name="left" :current.sync="current">
-        <Left />
-      </XIcon>
-      <XIcon name="right" :current.sync="current">
-        <Right />
-      </XIcon>
-      <XIcon name="text" :current.sync="current">
-        <TextX />
-      </XIcon>
-      <XIcon name="rect" :current.sync="current">
-        <RectX />
-      </XIcon>
-      <XIcon name="angle" :current.sync="current">
-        <Angle />
-      </XIcon>
-      <XIcon name="crop" :current.sync="current">
-        <Crop />
-      </XIcon>
-      <XIcon name="undo" :current.sync="current">
-        <Undo />
-      </XIcon>
-      <rightS></rightS>
+      <x-icon name="enlarge" :current.sync="current">
+        <enlarge></enlarge>
+      </x-icon>
+      <x-icon name="move" :current.sync="current">
+        <move></move>
+      </x-icon>
+      <x-icon name="invert" :current.sync="current">
+        <invert></invert>
+      </x-icon>
+      <x-icon name="left" :current.sync="current">
+        <left></left>
+      </x-icon>
+      <x-icon name="right" :current.sync="current">
+        <right></right>
+      </x-icon>
+      <x-icon name="text" :current.sync="current">
+        <text-x></text-x>
+      </x-icon>
+      <x-icon name="rect" :current.sync="current">
+        <rect-x></rect-x>
+      </x-icon>
+      <x-icon name="angle" :current.sync="current">
+        <angle></angle>
+      </x-icon>
+      <x-icon name="undo" :current.sync="current">
+        <undo></undo>
+      </x-icon>
+
       <!-- <icon name="Group 15" scale="200"></icon> -->
     </div>
   </Plate>
@@ -42,35 +39,34 @@
 import Plate from '@/components/common/Plate';
 import XIcon from '@/components/common/XIcon';
 // icon
-import Enlarge from '@/components/icon/Enlarge';
-import Move from '@/components/icon/Move';
-import Invert from '@/components/icon/Invert';
-import Left from '@/components/icon/Left';
-import Right from '@/components/icon/Right';
-import TextX from '@/components/icon/Text';
-import RectX from '@/components/icon/Rect';
-import Angle from '@/components/icon/Angle';
-import Crop from '@/components/icon/Crop';
-import Undo from '@/components/icon/Undo';
-
 import rightS from '@/svg/right.svg';
+import enlarge from '@/svg/enlarge.svg';
+import move from '@/svg/move.svg';
+import invert from '@/svg/invert.svg';
+import left from '@/svg/left.svg';
+import right from '@/svg/right.svg';
+import angle from '@/svg/angle.svg';
+import textX from '@/svg/text.svg';
+import undo from '@/svg/undo.svg';
+import rectX from '@/svg/rect.svg';
+import ttt from '@/svg/Group 37.svg';
 
 export default {
   name: 'PlatePublic',
   components: {
     Plate,
     XIcon,
-    Enlarge,
-    Move,
-    Invert,
-    Left,
-    Right,
-    TextX,
-    RectX,
-    Angle,
-    Crop,
-    Undo,
-    rightS
+    rightS,
+    enlarge,
+    move,
+    invert,
+    left,
+    right,
+    angle,
+    textX,
+    undo,
+    rectX,
+    ttt
   },
   data() {
     return {

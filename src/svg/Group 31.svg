@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 31</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="35" height="35"></rect>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-336.000000, -430.000000)">
+            <g id="Group-31" transform="translate(327.000000, 421.000000)">
+                <g id="Rectangle-4" opacity="0">
+                    <g>
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="34" height="34"></rect>
+                    </g>
+                </g>
+                <g id="画笔" transform="translate(9.000000, 9.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M13.8423983,0 L1.56231263,12.36578 L1.51092077,12.3140187 L1.47494647,12.4563623 L1.37473233,12.5572969 L1.43383298,12.6168224 L0.773447537,15.1634795 L0,18 L2.81884368,17.2209921 L5.34732334,16.5558591 L5.53233405,16.7421999 L18,4.18490295 L13.8423983,0 Z M5.39614561,15.536161 L5.32162741,15.5568656 L5.0235546,15.8570812 L4.84882227,15.6810927 L3.3764454,16.0693027 L1.36445396,16.6257369 L1.91691649,14.5992811 L2.30235546,13.1163192 L2.25353319,13.0671459 L2.33576017,12.9843278 L2.44368308,12.5650611 L2.59785867,12.7203451 L13.8423983,1.39496765 L16.6124197,4.18490295 L5.36788009,15.5102804 L5.39614561,15.536161 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

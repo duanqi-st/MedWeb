@@ -2,10 +2,9 @@
   <Plate title="Layout">
     <div class="icon-wrapper">
       <XIcon name="layout1" :current.sync="current">
-        <Layout1 />
+        <Layout1></Layout1>
       </XIcon>
       <XIcon name="layout4" :current.sync="current">
-        <Layout4 />
       </XIcon>
     </div>
   </Plate>
@@ -16,8 +15,8 @@
 import Plate from '@/components/common/Plate';
 import XIcon from '@/components/common/XIcon';
 // icon
-import Layout1 from '@/components/icon/Layout1';
-import Layout4 from '@/components/icon/Layout4';
+import Layout4 from '@/svg/Layout4.svg';
+import Layout1 from '@/components/icon/Layout4';
 
 export default {
   name: 'PlateLayout',

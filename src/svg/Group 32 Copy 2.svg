@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="29px" viewBox="0 0 28 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 32 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="35" height="35"></rect>
+        <filter x="-40.0%" y="-28.6%" width="180.0%" height="176.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.6 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-418.000000, -472.000000)">
+            <g id="Group-32-Copy-2" transform="translate(414.000000, 467.000000)">
+                <g id="Rectangle-4" opacity="0">
+                    <g>
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="34" height="34"></rect>
+                    </g>
+                </g>
+                <g id="Group-22" filter="url(#filter-2)" transform="translate(8.000000, 7.000000)" stroke="#FFFFFF" stroke-linecap="square">
+                    <g id="Group-21" transform="translate(0.000000, 9.000000)">
+                        <path d="M8.26086957,1.5 L0.386621619,1.5" id="Line-12"></path>
+                        <path d="M19.5652174,1.5 L11.6909694,1.5" id="Line-12-Copy"></path>
+                    </g>
+                    <g id="Group-21" transform="translate(10.000000, 10.500000) rotate(-270.000000) translate(-10.000000, -10.500000) translate(0.000000, 9.000000)">
+                        <path d="M8.55,1.5 L0.400153376,1.5" id="Line-12"></path>
+                        <path d="M19.55,1.5 L11.4001534,1.5" id="Line-12-Copy"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

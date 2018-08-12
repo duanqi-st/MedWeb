@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="32px" viewBox="0 0 31 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-36.4%" y="-26.1%" width="168.2%" height="165.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.596608922 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-232.000000, -235.000000)">
+            <g id="Group-2" transform="translate(231.000000, 232.000000)">
+                <g id="Group-Copy" fill="#000000" opacity="0">
+                    <g id="Rectangle-6-Copy">
+                        <rect x="0" y="0" width="35" height="35"></rect>
+                    </g>
+                </g>
+                <g id="Group-10" filter="url(#filter-1)" transform="translate(6.000000, 6.000000)">
+                    <circle id="Oval-3" stroke="#FFFFFF" fill-opacity="0.06" fill="#FFFFFF" cx="9.5" cy="9.5" r="9.5"></circle>
+                    <path d="M15.6215911,17.3286979 C15.426329,17.1334358 15.426329,16.8168533 15.6215911,16.6215911 C15.8168533,16.426329 16.1334358,16.426329 16.3286979,16.6215911 L21.3702016,21.6630948 C21.5654637,21.8583569 21.5654637,22.1749394 21.3702016,22.3702016 C21.1749394,22.5654637 20.8583569,22.5654637 20.6630948,22.3702016 L15.6215911,17.3286979 Z" id="Line-4" fill="#FFFFFF" fill-rule="nonzero"></path>
+                    <path d="M5.5,9.5 L13.5,9.5" id="Line-5" stroke="#FFFFFF" stroke-linecap="round"></path>
+                    <path d="M9.5,5.5 L9.5,13.5" id="Line-5" stroke="#FFFFFF" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
