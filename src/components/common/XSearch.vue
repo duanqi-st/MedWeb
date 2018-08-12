@@ -17,7 +17,8 @@ export default {
 .x-input-search {
   position: relative;
   display: inline-block;
-  // width: 100%;
+  width: 100%;
+  box-sizing: border-box;
   border: none;
   border-radius: 100px;
   transition: all 0.3s;

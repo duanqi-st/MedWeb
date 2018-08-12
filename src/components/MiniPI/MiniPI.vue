@@ -1,32 +1,31 @@
 <template>
   <!-- transition 提供过渡动画 -->
-  <transition name="slide-fade">
+  <transition name="slide-fade" mode="out-in">
     <!-- v-show 控制显示与否 -->
     <!-- v-show 适用于经常切换的内容 -->
     <!-- v-if 适用于不经常切换的内容 惰性加载 -->
     <div v-show="show" class="mini-pi mini-pi_backup">
       <!-- <XInput placeholder="test st"></XInput> -->
-      <XInputSearch placeholder="test st"></XInputSearch>
-      <XSelect>
-        <span slot="select">sdsdsd</span>
-      </XSelect>
       <!-- PatientCard 为自定义组件，需要引入并添加到 components 对象中 -->
       <!-- 遍历 this.list 列表，把列表中的单项命名成 patitent；v-for必须提供 key -->
       <!-- 向 PatientCard 中传入 info，即每个病人的数据 -->
-      <PatientCard v-for="patitent in list" :key="patitent.id" :info="patitent" :current.sync="currentId" @select="id=>handleSelect(id, currentId)" />
+      <FilterPlate></FilterPlate>
+      <div class="mini-pi--list">
+        <PatientCard v-for="patitent in list" :key="patitent.id" :info="patitent" :current.sync="currentId" @select="id=>handleSelect(id, currentId)" />
+      </div>
+      <UserBar></UserBar>
     </div>
   </transition>
 </template>
 
 <script>
-import PatientCard from '@/components/PatientCard';
-import XInput from '@/components/common/XInput';
-import XInputSearch from '@/components/common/XInputSearch';
-import XSelect from '@/components/common/XSelect';
+import PatientCard from './PatientCard';
+import UserBar from './UserBar';
+import FilterPlate from './FilterPlate';
 
 export default {
   name: 'MiniPI',
-  components: { PatientCard, XInput, XInputSearch, XSelect },
+  components: { PatientCard, UserBar, FilterPlate },
   // sockets 对象中监听 socket事件
   sockets: {
     connect() {
@@ -113,37 +112,48 @@ export default {
 };
 </script>
 
-<style scoped>
-@media screen and (orientation: portrait) {
-  .mini-pi {
-    order: 1;
-  }
-}
+<style lang="less" scoped>
 .mini-pi {
   box-sizing: border-box;
-  /* width: 17.901vw;
-  height: 100vh; */
   flex: 29;
   background: linear-gradient(to bottom, #dadcee, #fff);
-  overflow-x: hidden;
-  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  &--list {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+  }
 }
 
 .mini-pi_backup {
-  /* min-width: 289px; */
+  min-width: 289px;
 }
 
 .slide-fade-enter-active {
   transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter,
 .slide-fade-leave-to {
   transform: translateX(-15vw);
-
   opacity: 0;
+}
+
+@media screen and (orientation: portrait) {
+  .mini-pi {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+  }
 }
 </style>
 

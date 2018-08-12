@@ -1,5 +1,5 @@
 <template>
-  <transition name="slide-fade">
+  <transition name="slide-fade" mode="in-out">
     <div v-show="show" class="console console_backup">
       <div class="header header_backup">
         <div class="toggle toggle_backup" @click="toggleMiniPI">
@@ -86,14 +86,12 @@ export default {
   }
 }
 .console {
-  // width: 15.432vw;
-  // height: 100vh;
   flex: 25;
   position: relative;
   background: #253561;
 
   &_backup {
-    // min-width: 252px;
+    min-width: 252px;
   }
 }
 
@@ -183,12 +181,11 @@ export default {
   transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter,
 .slide-fade-leave-to {
   transform: translateX(-15vw);
-
   opacity: 0;
 }
 </style>

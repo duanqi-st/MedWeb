@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import MiniPI from '@/components/MiniPI';
-import Console from '@/components/console/Console';
+import MiniPI from '@/components/MiniPI/MiniPI';
+import Console from '@/components/Console/Console';
 import Main from '@/components/Main';
 import DiseaseDiagnosis from '@/components/DiseaseDiagnosis';
 
@@ -54,6 +54,7 @@ export default {
   height: 100vh;
   box-sizing: border-box;
   overflow: hidden;
+  background: #253561;
 }
 
 @media screen and (orientation: portrait) {

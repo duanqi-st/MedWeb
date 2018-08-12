@@ -84,6 +84,7 @@ export default {
     box-shadow: 0 4px 12px 0;
     color: #fff;
     z-index: 10;
+    border-bottom-left-radius: 30px;
   }
   &_backup {
     min-height: 64px;
@@ -141,12 +142,24 @@ export default {
   box-sizing: border-box;
   padding-left: 56px;
   justify-content: space-around;
+  position: relative;
   &_backup {
     min-height: 30px;
     font-size: 12px;
   }
   &:nth-child(2n + 1) {
     color: #3b4a81;
+    border-bottom-left-radius: 30px;
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: #6089d8;
+    }
   }
   &:nth-child(2n) {
     color: #fff;

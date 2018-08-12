@@ -1,17 +1,25 @@
 <template>
   <div>
     <div class="x-select x-select_backup" @click="expand = !expand">
-      <slot name="select"></slot>
+      {{selected}}
       <div class="x-select--icon_backup" :class="iconClass"></div>
     </div>
-    <div>
-      <slot name="option"></slot>
+    <div v-if="expand">
+      <div v-for="option in options" :key="option.id" class="x-select--option">
+        {{option.name}}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    options: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
       expand: false
@@ -23,6 +31,9 @@ export default {
         'x-select--icon': this.expand,
         'x-select--icon_unexpand': !this.expand
       };
+    },
+    selected() {
+      return this.options.find(({ selected }) => selected);
     }
   }
 };
