@@ -1,40 +1,31 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" @contextmenu="handleRightClick">
+    <keep-alive>
+      <MiniPI :show="miniPIShow" :currentPatient.sync="currentPatient" />
+    </keep-alive>
+    <Console @onTogglePI="miniPIShow = !miniPIShow" @onToggleDD="handleToggleDD" :current="currentPatient" />
+    <Main/>
+    <DiseaseDiagnosis :show.sync="ddShow" :currentPatient="currentPatient" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MiniPI from '@/components/MiniPI/MiniPI';
+import Console from '@/components/Console/Console';
+import Main from '@/components/Main';
+import DiseaseDiagnosis from '@/components/DiseaseDiagnosis';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
-   miniPIShow: true,
+    MiniPI,
+    Console,
+    Main,
+    DiseaseDiagnosis
+  },
+  data() {
+    return {
+      miniPIShow: true,
       ddShow: false,
       currentPatient: {
         id: '1343543654764',
@@ -51,6 +42,17 @@ export default {
         ]
       }
     };
+  },
+  methods: {
+    handleToggleDD() {
+      this.ddShow = !this.ddShow;
+      if (this.ddShow) {
+        this.miniPIShow = false;
+      }
+    },
+    handleRightClick(e) {
+      e.preventDefault();
+    }
   }
 };
 </script>

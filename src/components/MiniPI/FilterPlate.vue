@@ -34,7 +34,7 @@ export default {
       height: 80px;
       &::after {
         background-image: linear-gradient(
-          left,
+          to left,
           #5e34a9 0%,
           #1a209e 44%,
           #427bf7 100%

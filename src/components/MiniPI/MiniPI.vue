@@ -415,7 +415,7 @@ export default {
 .mini-pi {
   box-sizing: border-box;
   flex: 29;
-  background: linear-gradient(top, #dadcee, #fff);
+  background: linear-gradient(to bottom, #dadcee, #fff);
 
   display: flex;
   flex-direction: column;

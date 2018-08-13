@@ -7497,6 +7497,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-bus@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/vue-bus/download/vue-bus-1.1.0.tgz#803c53ced328a8ce01c95bfb72bf9d623d6df5a7"
+
 vue-cli-plugin-element@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/vue-cli-plugin-element/download/vue-cli-plugin-element-1.0.0.tgz#2ee8cfecb9a49aabdc1d4cb58934113bddf3b4c0"
