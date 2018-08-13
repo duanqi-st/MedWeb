@@ -10,9 +10,9 @@
       <!-- 遍历 this.list 列表，把列表中的单项命名成 patitent；v-for必须提供 key -->
       <!-- 向 PatientCard 中传入 info，即每个病人的数据 -->
       <FilterPlate></FilterPlate>
-      <el-scrollbar :native="false" class="mini-pi--list">
+      <div class="mini-pi--list">
         <PatientCard v-for="patitent in list" :key="patitent.id" :info="patitent" :current.sync="currentId" @select="id=>handleSelect(id, currentId)" />
-      </el-scrollbar>
+      </div>
       <UserBar></UserBar>
     </div>
   </transition>
@@ -423,11 +423,11 @@ export default {
     flex: 1;
     overflow-x: hidden;
     overflow-y: scroll;
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-    &::-webkit-scrollbar {
-      width: 0 !important;
-    }
+    // -ms-overflow-style: none;
+    // overflow: -moz-scrollbars-none;
+    // &::-webkit-scrollbar {
+    //   width: 0 !important;
+    // }
   }
 }
 
@@ -452,6 +452,10 @@ export default {
     order: 1;
     display: flex;
     flex-direction: row;
+  }
+
+  .mini-pi--list {
+    display: none;
   }
 }
 </style>

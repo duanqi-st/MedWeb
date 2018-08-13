@@ -19,6 +19,17 @@
       </tbody>
     </table>
     <div class="area">
+      <label for="behavier" class="label">医学影像</label>
+      <el-upload drag action="xxxx">
+        <div class="upload">
+          <img :src="uploadImg" class="upload--img">
+          <div class="upload--text">
+            可将图像拖拽到此处
+          </div>
+        </div>
+      </el-upload>
+    </div>
+    <div class="area">
       <label for="behavier" class="label">放射学表现</label>
       <textarea :value="current.behavier" name="behavier" class="input" placeholder="选择模板或者输入内容…">
       </textarea>
@@ -37,6 +48,8 @@
 </template>
 
 <script>
+import uploadImg from '@/assets/upload.png';
+
 export default {
   name: 'Report',
   props: {
@@ -49,6 +62,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      uploadImg
+    };
   },
   methods: {
     submit() {
@@ -101,6 +119,14 @@ export default {
       width: 100%;
       height: 200px;
     }
+    .upload {
+      margin-top: 20px;
+      &--text {
+        font-size: 12px;
+        color: #5a92ff;
+        opacity: 0.4;
+      }
+    }
   }
 
   .submit {
@@ -127,6 +153,19 @@ export default {
     span {
       margin: auto;
     }
+  }
+}
+</style>
+
+<style lang="less">
+.el-upload.el-upload--text {
+  width: 100%;
+  .el-upload-dragger {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(97, 110, 140, 0.15);
+    border-radius: 2px;
+    height: 96px;
   }
 }
 </style>

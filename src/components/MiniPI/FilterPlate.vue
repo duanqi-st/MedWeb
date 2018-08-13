@@ -67,4 +67,10 @@ export default {
     justify-content: space-around;
   }
 }
+
+@media screen and (orientation: portrait) {
+  .filter-plate {
+    flex: 3;
+  }
+}
 </style>

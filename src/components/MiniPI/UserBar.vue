@@ -64,4 +64,10 @@ export default {};
     }
   }
 }
+
+@media screen and (orientation: portrait) {
+  .user-bar {
+    flex: 1;
+  }
+}
 </style>

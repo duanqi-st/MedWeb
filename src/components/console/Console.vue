@@ -6,9 +6,11 @@
           <div class="toggle--inner"></div>
         </div>
         <span>Tools</span>
-        <select>
-          <option value="2"></option>
-        </select>
+        <el-select size="mini" v-model="toolFilter" class="filter-select">
+          <el-option label="2d" value="2d" />
+          <el-option label="3d" value="3d" />
+        </el-select>
+
       </div>
       <div class="patient">
         <span>{{current.name}}</span>
@@ -17,7 +19,7 @@
       </div>
       <PlateLayout></PlateLayout>
       <PlatePublic></PlatePublic>
-      <Plate title="Other"></Plate>
+      <PlateOther></PlateOther>
       <Plate title="Illness"></Plate>
       <div class="footer">
         <XButton md>next</XButton>
@@ -32,13 +34,18 @@ import isEmpty from 'lodash/isEmpty';
 
 import PlateLayout from './PlateLayout';
 import PlatePublic from './PlatePublic';
+import PlateOther from './PlateOther';
 import Plate from '@/components/common/Plate';
 import XIcon from '@/components/common/XIcon';
 import XButton from '@/components/common/XButton';
 
+// icon
+import male from '@/svg/male_ghost.svg';
+import female from '@/svg/female_ghost.svg';
+
 export default {
   name: 'Console',
-  components: { Plate, XIcon, PlateLayout, PlatePublic, XButton },
+  components: { Plate, XIcon, PlateLayout, PlatePublic, PlateOther, XButton },
   props: {
     current: {
       type: Object,
@@ -49,7 +56,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      toolFilter: '2d'
+    };
   },
   computed: {
     /**
@@ -86,8 +95,10 @@ export default {
   }
 }
 .console {
-  flex: 25;
   position: relative;
+
+  flex: 25;
+
   background: #253561;
 
   &_backup {
@@ -138,30 +149,39 @@ export default {
   padding: 10px 20px;
 }
 
+.filter-select {
+  width: 72px;
+}
+
 .footer {
   position: absolute;
-  display: flex;
   bottom: 26px;
-  width: 100%;
-  color: #fff;
+
+  display: flex;
   justify-content: space-around;
+
+  width: 100%;
+
+  color: #fff;
   .btn {
+    display: flex;
+
+    box-sizing: border-box;
     width: 88px;
     height: 24px;
+
     border-radius: 100px;
-    display: flex;
-    box-sizing: border-box;
     span {
       margin: auto;
     }
     &_backup {
-      font-size: 12px;
       min-width: 88px;
       min-height: 24px;
+
+      font-size: 12px;
     }
   }
   .next {
-    font-weight: bold;
     background-image: linear-gradient(
       -34deg,
       #5e34a9 0%,
@@ -170,10 +190,12 @@ export default {
     );
     box-shadow: 0 2px 12px 0 rgba(0, 29, 255, 0.35),
       inset 0 0 1px 0 rgba(255, 255, 255, 0.5);
+
+    font-weight: bold;
   }
   .report {
-    background: rgba(27, 54, 116, 0.5);
     border: 1px solid #ffffff;
+    background: rgba(27, 54, 116, 0.5);
   }
 }
 
@@ -186,6 +208,7 @@ export default {
 .slide-fade-enter,
 .slide-fade-leave-to {
   transform: translateX(-15vw);
+
   opacity: 0;
 }
 </style>

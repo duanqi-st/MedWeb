@@ -164,4 +164,10 @@ export default {
     background: #6089d8;
   }
 }
+
+@media screen and (orientation: portrait) {
+  .container {
+    display: none;
+  }
+}
 </style>

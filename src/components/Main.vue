@@ -58,6 +58,8 @@ export default {
   flex-wrap: wrap;
 
   background: red;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .main_backup {
@@ -66,10 +68,11 @@ export default {
 
 .canvas-wrapper {
   display: flex;
-  flex: 1;
   box-sizing: border-box;
   border: 1px solid #fff;
   background: #000;
+  min-width: 50%;
+  max-width: 100%;
 }
 
 .canvas {
@@ -81,8 +84,8 @@ export default {
     height: 100vmin;
   }
   &_layout4 {
-    width: calc(50vmin - 1px);
-    height: calc(50vmin - 1px);
+    width: 49.5vmin;
+    height: 50vmin;
   }
 }
 </style>
