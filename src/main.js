@@ -5,8 +5,10 @@ import VueBus from 'vue-bus';
 import 'normalize.css';
 import App from './App.vue';
 import './plugins/element.js';
+import { Scrollbar } from 'element-ui';
 
 Vue.use(VueBus);
+Vue.use(Scrollbar);
 // 配置socket地址
 // Vue.use(VueSocketio, 'http://localhost:3000');
 Vue.config.productionTip = true;

@@ -47,7 +47,8 @@ export default {
   display: block;
   height: 100vh;
   width: 188px;
-  background: #fff;
+  background-image: linear-gradient(-180deg, #e8eaf2 27%, #eaeef5 100%);
+  box-shadow: 2px 0 12px 0 rgba(0, 0, 0, 0.37);
   &_backup {
     min-width: 188px;
   }

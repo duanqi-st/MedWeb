@@ -10,9 +10,9 @@
       <!-- 遍历 this.list 列表，把列表中的单项命名成 patitent；v-for必须提供 key -->
       <!-- 向 PatientCard 中传入 info，即每个病人的数据 -->
       <FilterPlate></FilterPlate>
-      <div class="mini-pi--list">
+      <el-scrollbar :native="false" class="mini-pi--list">
         <PatientCard v-for="patitent in list" :key="patitent.id" :info="patitent" :current.sync="currentId" @select="id=>handleSelect(id, currentId)" />
-      </div>
+      </el-scrollbar>
       <UserBar></UserBar>
     </div>
   </transition>
