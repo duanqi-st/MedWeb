@@ -13,7 +13,7 @@
 import MiniPI from '@/components/MiniPI/MiniPI';
 import Console from '@/components/Console/Console';
 import Main from '@/components/Main';
-import DiseaseDiagnosis from '@/components/DiseaseDiagnosis';
+import DiseaseDiagnosis from '@/components/DD/DiseaseDiagnosis';
 
 export default {
   name: 'app',

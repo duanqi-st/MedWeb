@@ -1,5 +1,8 @@
 <template>
   <div class="case case_backup">
+    <div class="case--header case--header_backup">
+      Head Model
+    </div>
     <div class="item item_backup" :class="{'item_active':item.id===currentId}" v-for="item in list" :key="item.id" @click="()=>handleSelect(item)">
       <span>
         {{item.name}}
@@ -49,6 +52,23 @@ export default {
     min-width: 188px;
   }
 
+  &--header {
+    &_backup {
+      color: #fff;
+      font-size: 14px;
+      line-height: 34px;
+      text-align: center;
+      height: 34px;
+      background-image: linear-gradient(
+        34deg,
+        #5e34a9 0%,
+        #1a209e 44%,
+        #427bf7 100%
+      );
+      box-shadow: 0 2px 14px 0 rgba(80, 100, 255, 0.35);
+    }
+  }
+
   .item {
     width: 100%;
     height: 34px;
@@ -61,6 +81,7 @@ export default {
       color: #fff;
       background: #5a92ff;
       box-shadow: 0 4px 12px 0 rgba(51, 103, 237, 0.4);
+      border-bottom-left-radius: 20px;
     }
     &_backup {
       min-height: 34px;

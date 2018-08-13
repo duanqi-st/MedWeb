@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Report from '@/components/Report';
-import Case from '@/components/Case';
+import Report from './Report';
+import Case from './Case';
 
 export default {
   name: 'DiseaseDiagnosis',
@@ -44,6 +44,7 @@ export default {
 <style lang="less" scoped>
 .container {
   flex: 137;
+  display: flex;
 }
 
 .slide-fade-enter-active {
