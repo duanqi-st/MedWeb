@@ -10,17 +10,34 @@
           <el-option label="2d" value="2d" />
           <el-option label="3d" value="3d" />
         </el-select>
+      </div>
+      <div>
+        <div class="patient">
+          <component :is="genderAvatar"></component>
+          <div class="patient-info">
+            <span class="patient-info--name">{{current.name}}</span>
+            <span class="patient-info--bd">{{current.bd}}</span>
+            <div class="patient-info--row">
+              <span class="patient-info--id">{{current.id}}</span>
+              <span class="patient-info--date">{{current.date}}</span>
+            </div>
+          </div>
 
+        </div>
+        <div class="patient-cts">
+          <div v-for="n in 10" :key="n" class="patient-ct-wrapper">
+            <img src="http://temp.im/300/300" class="patient-ct">
+            <div>S1.29</div>
+          </div>
+        </div>
+        <PlateLayout></PlateLayout>
+        <PlatePublic></PlatePublic>
+        <PlateOther></PlateOther>
       </div>
-      <div class="patient">
-        <span>{{current.name}}</span>
-        <span>{{current.bd}}</span>
-        <div>{{current.id}}</div>
-      </div>
-      <PlateLayout></PlateLayout>
-      <PlatePublic></PlatePublic>
-      <PlateOther></PlateOther>
-      <Plate title="Illness"></Plate>
+
+      <Plate title="Illness" class="group_h">
+        has something
+      </Plate>
       <div class="footer">
         <XButton md>next</XButton>
         <XButton md ghost @click="toggleDD">report</XButton>
@@ -45,7 +62,16 @@ import female from '@/svg/female_ghost.svg';
 
 export default {
   name: 'Console',
-  components: { Plate, XIcon, PlateLayout, PlatePublic, PlateOther, XButton },
+  components: {
+    Plate,
+    XIcon,
+    PlateLayout,
+    PlatePublic,
+    PlateOther,
+    XButton,
+    male,
+    female
+  },
   props: {
     current: {
       type: Object,
@@ -67,6 +93,9 @@ export default {
      */
     show() {
       return !isEmpty(this.current);
+    },
+    genderAvatar() {
+      return this.current.gender ? male : female;
     }
   },
   methods: {
@@ -89,17 +118,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@media screen and (orientation: portrait) {
-  .console {
-    order: 3;
-  }
-}
 .console {
   position: relative;
 
   flex: 25;
 
   background: #253561;
+  display: flex;
+  flex-direction: column;
 
   &_backup {
     min-width: 252px;
@@ -141,6 +167,59 @@ export default {
 
 .patient {
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 11px 16px;
+  &-info {
+    flex: 1;
+    margin-left: 16px;
+    &--name {
+      font-weight: bold;
+    }
+    &--bd {
+      margin-left: 11px;
+    }
+    &--row {
+      display: flex;
+      justify-content: space-between;
+    }
+    &--id {
+      opacity: 0.6;
+    }
+    &--date {
+      opacity: 0.6;
+      background: #5a92ff;
+      padding: 0 1em;
+      border-radius: 100px;
+    }
+  }
+  &-cts {
+    display: flex;
+    width: 100%;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+  }
+  &-ct-wrapper {
+    width: 76px;
+    height: 92px;
+    background: #2c407a;
+    color: #fff;
+    text-align: center;
+    margin-right: 4px;
+  }
+  &-ct {
+    width: 74px;
+    height: 74px;
+    vertical-align: bottom;
+  }
 }
 
 .icon-wrapper {
@@ -210,5 +289,29 @@ export default {
   transform: translateX(-15vw);
 
   opacity: 0;
+}
+
+@media screen and (orientation: portrait) {
+  .console {
+    order: 3;
+    flex-direction: row;
+    .header {
+      writing-mode: vertical-rl;
+      justify-content: space-around;
+      height: 100%;
+      .toggle {
+        display: none;
+      }
+      .filter-select {
+        display: none;
+      }
+    }
+    .group_h {
+      flex: 1;
+    }
+    .footer {
+      display: none;
+    }
+  }
 }
 </style>

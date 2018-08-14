@@ -56,7 +56,7 @@ export default {
     width: 90%;
     position: absolute;
     z-index: 10;
-    top: 20px;
+    top: 16px;
     left: 50%;
     transform: translate(-50%, 0);
   }
@@ -71,6 +71,19 @@ export default {
 @media screen and (orientation: portrait) {
   .filter-plate {
     flex: 3;
+    &--search {
+      &_backup {
+        height: 44px;
+        &::after {
+          border-radius: 0;
+          top: -1456px;
+        }
+      }
+    }
+
+    &--button-group {
+      display: none;
+    }
   }
 }
 </style>

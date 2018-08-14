@@ -68,6 +68,9 @@ export default {};
 @media screen and (orientation: portrait) {
   .user-bar {
     flex: 1;
+    &_backup {
+      height: 44px;
+    }
   }
 }
 </style>

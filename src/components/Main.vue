@@ -1,16 +1,16 @@
 <template>
   <div class="main main_backup">
     <div class="canvas-wrapper">
-      <div :class="canvasClass"></div>
+      <div :class="canvasClass">1</div>
     </div>
     <div class="canvas-wrapper">
-      <div :class="canvasClass"></div>
+      <div :class="canvasClass">2</div>
     </div>
     <div class="canvas-wrapper">
-      <div :class="canvasClass"></div>
+      <div :class="canvasClass">3</div>
     </div>
     <div class="canvas-wrapper">
-      <div :class="canvasClass"></div>
+      <div :class="canvasClass">4</div>
     </div>
   </div>
 </template>
@@ -57,22 +57,27 @@ export default {
   flex: 108;
   flex-wrap: wrap;
 
-  background: red;
+  background: #000;
   overflow-x: hidden;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 }
 
 .main_backup {
-  // min-width: 50vmin;
+  min-width: 50vmin;
 }
 
 .canvas-wrapper {
   display: flex;
   box-sizing: border-box;
-  border: 1px solid #fff;
   background: #000;
   min-width: 50%;
   max-width: 100%;
+  border: 1px solid #fff;
 }
 
 .canvas {
@@ -84,8 +89,8 @@ export default {
     height: 100vmin;
   }
   &_layout4 {
-    width: 49.5vmin;
-    height: 50vmin;
+    width: 49vmin;
+    height: 49vmin;
   }
 }
 </style>

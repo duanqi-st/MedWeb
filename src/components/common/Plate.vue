@@ -32,5 +32,13 @@ export default {
     }
   }
 }
+
+@media screen and (orientation: portrait) {
+  .plate {
+    .title {
+      display: none;
+    }
+  }
+}
 </style>
 
