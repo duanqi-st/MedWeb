@@ -5,5 +5,11 @@ module.exports = {
     svgRule.uses.clear();
 
     svgRule.use('vue-svg-loader').loader('vue-svg-loader');
+    config.module
+      .rule('txt')
+      .test(/\.txt$/)
+      .use('raw-loader')
+      .loader('raw-loader')
+      .end();
   }
 };

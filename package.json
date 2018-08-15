@@ -23,6 +23,7 @@
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
     "postcss-px-to-viewport": "^0.0.3",
+    "raw-loader": "^0.5.1",
     "vue-bus": "^1.1.0",
     "vue-cli-plugin-element": "^1.0.0",
     "vue-svg-icon": "^1.2.9",
