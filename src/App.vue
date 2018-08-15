@@ -27,20 +27,7 @@ export default {
     return {
       miniPIShow: true,
       ddShow: false,
-      currentPatient: {
-        id: '1343543654764',
-        name: '刘长春',
-        gender: 0,
-        date: '2018.05.04',
-        bd: 'BD 2018.04.03',
-        examples: [
-          {
-            id: 55,
-            name: 'example 1',
-            date: '2018.02.15'
-          }
-        ]
-      }
+      currentPatient: {}
     };
   },
   methods: {
